@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velocity Learning — The Future of Coding Education</title>
+<meta name="description" content="Learn coding the right way with structured roadmaps, mentorship, projects, and career-focused learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#0b1437;
+  --ink2:#13205a;
+  --ink3:#1e2d6e;
+  --primary:#3a4ee0;
+  --primary2:#5868f0;
+  --primary-soft:#eef0ff;
+  --accent:#ffc83d;
+  --accent2:#ffb000;
+  --accent-soft:#fff6dc;
+  --orange:#ff6b35;
+  --orange2:#ff854f;
+  --orange-soft:#ffe8de;
+  --green:#10b981;
+  --green-soft:#d6f5e9;
+  --pink:#ec4899;
+  --red:#ef4444;
+  --gray-50:#f7f8fc;
+  --gray-100:#eef0f6;
+  --gray-200:#dfe3ee;
+  --gray-300:#c5cbd9;
+  --gray-400:#8a93a8;
+  --gray-500:#5b6478;
+  --gray-600:#3a4257;
+  --gray-700:#222a40;
+  --bg:#ffffff;
+  --bg2:#fbfcfe;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --display:'Sora','Plus Jakarta Sans',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --shadow-sm:0 1px 3px rgba(11,20,55,.06),0 1px 2px rgba(11,20,55,.04);
+  --shadow-md:0 6px 16px rgba(11,20,55,.06),0 2px 4px rgba(11,20,55,.04);
+  --shadow-lg:0 24px 48px -12px rgba(11,20,55,.12),0 8px 16px rgba(11,20,55,.06);
+  --shadow-xl:0 32px 64px -16px rgba(11,20,55,.18),0 12px 24px rgba(11,20,55,.08);
+  --shadow-yellow:0 12px 28px rgba(255,176,0,.35);
+  --shadow-primary:0 12px 28px rgba(58,78,224,.28);
+  --radius:14px;
+  --radius-lg:20px;
+  --radius-xl:28px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--gray-50);}
+::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:8px;}
+::selection{background:var(--accent);color:var(--ink);}
+
+/* TOP STRIP */
+.top-strip{background:var(--ink);color:#fff;font-size:.78rem;padding:.5rem 5%;display:flex;align-items:center;justify-content:center;gap:1rem;font-weight:500;}
+.top-strip strong{color:var(--accent);font-weight:700;}
+.top-strip .pulse-dot{width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;box-shadow:0 0 0 0 rgba(16,185,129,.6);animation:pulseDot 2s infinite;}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(16,185,129,.6);}70%{box-shadow:0 0 0 8px rgba(16,185,129,0);}100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--gray-100);}
+.nav-logo{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
+.nav-v{width:40px;height:40px;background:linear-gradient(135deg,var(--primary) 0%,var(--ink2) 100%);border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;position:relative;box-shadow:var(--shadow-primary);font-family:var(--display);font-weight:800;font-size:1.2rem;}
+.nav-v::after{content:'';position:absolute;bottom:-3px;right:-3px;width:14px;height:14px;background:var(--accent);border-radius:50%;border:2.5px solid #fff;}
+.nav-name{display:flex;flex-direction:column;line-height:1.1;}
+.nav-name span:first-child{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--ink);letter-spacing:-.02em;}
+.nav-name span:last-child{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-top:1px;}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links > a{font-size:.92rem;font-weight:600;color:var(--gray-600);text-decoration:none;transition:color .2s var(--ease);}
+.nav-links > a:hover{color:var(--primary);}
+.nav-actions{display:flex;align-items:center;gap:.75rem;}
+.nav-cta{background:var(--accent);color:var(--ink)!important;padding:.7rem 1.3rem;border-radius:10px;font-size:.9rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s var(--ease);box-shadow:var(--shadow-yellow);}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-2px);}
+.nav-cta svg{width:14px;height:14px;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;border-radius:8px;}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;}
+.mobile-menu{display:none;position:fixed;inset:104px 0 0 0;background:#fff;z-index:190;flex-direction:column;padding:1.5rem 5%;gap:.25rem;overflow-y:auto;border-top:1px solid var(--gray-100);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.05rem;font-weight:600;color:var(--ink);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--gray-100);}
+.mobile-menu .nav-cta{margin-top:1rem;justify-content:center;padding:1rem;}
+
+/* HERO */
+.hero{padding:4rem 5% 5rem;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bg2) 0%,#fff 100%);}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(58,78,224,.08),transparent 60%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,200,61,.12),transparent 60%);pointer-events:none;}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2;}
+.hero-badge{display:inline-flex;align-items:center;gap:.55rem;background:#fff;border:1.5px solid var(--gray-200);color:var(--ink);font-size:.78rem;font-weight:700;padding:.5rem 1rem;border-radius:100px;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);}
+.hero-badge .dot-green{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulseDot 2s infinite;}
+.hero h1{font-family:var(--display);font-size:clamp(2.2rem,4.8vw,3.8rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:1.4rem;}
+.hero h1 .hl{position:relative;color:var(--primary);white-space:nowrap;}
+.hero h1 .hl::after{content:'';position:absolute;left:0;right:0;bottom:.05em;height:.4em;background:var(--accent);z-index:-1;border-radius:4px;transform:skew(-8deg);}
+.hero-sub{font-size:1.1rem;font-weight:400;color:var(--gray-500);line-height:1.65;max-width:520px;margin-bottom:2rem;}
+.hero-sub strong{color:var(--ink);font-weight:600;}
+.hero-actions{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.95rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;padding:1rem 1.7rem;border-radius:12px;transition:all .3s var(--ease);}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease);}
+.btn-accent{background:var(--accent);color:var(--ink);box-shadow:var(--shadow-yellow);}
+.btn-accent:hover{background:var(--accent2);transform:translateY(-2px);}
+.btn-accent:hover svg{transform:translate(3px,-3px);}
+.btn-outline{background:#fff;color:var(--ink);border:1.5px solid var(--gray-200);box-shadow:var(--shadow-sm);}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px);}
+.btn-outline:hover svg{transform:translateX(3px);}
+
+.hero-meta{display:flex;align-items:center;gap:1rem;padding-top:1.5rem;border-top:1px solid var(--gray-100);}
+.avatars{display:flex;}
+.avatars span{width:34px;height:34px;border-radius:50%;border:2.5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:#fff;margin-left:-10px;}
+.avatars span:first-child{margin-left:0;}
+.waitlist-text{font-size:.88rem;color:var(--gray-500);font-weight:500;}
+.waitlist-text strong{color:var(--ink);font-weight:700;}
+
+/* HERO RIGHT */
+.hero-visual{position:relative;}
+.skill-orbit{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.skill-pill{background:#fff;border:1.5px solid var(--gray-200);border-radius:14px;padding:1.1rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;box-shadow:var(--shadow-sm);transition:all .35s var(--ease);animation:floatY 5s ease-in-out infinite;}
+.skill-pill:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--primary-soft);}
+.skill-pill:nth-child(1){animation-delay:.1s;}
+.skill-pill:nth-child(2){animation-delay:.4s;}
+.skill-pill:nth-child(3){animation-delay:.7s;}
+.skill-pill:nth-child(4){animation-delay:.2s;}
+.skill-pill:nth-child(5){animation-delay:.5s;}
+.skill-pill:nth-child(6){animation-delay:.8s;}
+.skill-pill:nth-child(7){animation-delay:.3s;}
+.skill-pill:nth-child(8){animation-delay:.6s;}
+.skill-pill:nth-child(9){animation-delay:.9s;}
+.skill-pill-emoji{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:1.05rem;color:#fff;}
+.sk-1 .skill-pill-emoji{background:linear-gradient(135deg,var(--primary),var(--ink2));}
+.sk-2 .skill-pill-emoji{background:linear-gradient(135deg,var(--orange),#c93d11);}
+.sk-3 .skill-pill-emoji{background:linear-gradient(135deg,var(--accent2),#b8860b);color:var(--ink);}
+.sk-4 .skill-pill-emoji{background:linear-gradient(135deg,var(--green),#047857);}
+.sk-5 .skill-pill-emoji{background:linear-gradient(135deg,var(--pink),#9d174d);}
+.sk-6 .skill-pill-emoji{background:linear-gradient(135deg,var(--primary2),var(--primary));}
+.sk-7 .skill-pill-emoji{background:linear-gradient(135deg,var(--ink),var(--ink3));}
+.sk-8 .skill-pill-emoji{background:linear-gradient(135deg,var(--orange2),var(--orange));}
+.sk-9 .skill-pill-emoji{background:linear-gradient(135deg,#047857,var(--green));}
+.skill-pill-name{font-family:var(--display);font-weight:700;font-size:.92rem;color:var(--ink);}
+.skill-pill-tag{font-size:.65rem;color:var(--gray-400);font-weight:600;text-transform:uppercase;letter-spacing:.08em;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+/* CODE TERMINAL (educational interactive) */
+.code-terminal{background:#0f1532;border-radius:18px;box-shadow:var(--shadow-xl);overflow:hidden;border:1px solid rgba(255,255,255,.08);position:relative;font-family:var(--mono);}
+.code-terminal::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(58,78,224,.18),transparent 60%);pointer-events:none;}
+.term-bar{background:#1a2244;padding:.7rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.term-dots{display:flex;gap:.4rem;}
+.term-dot{width:11px;height:11px;border-radius:50%;}
+.term-dot.r{background:#ff5f56;}
+.term-dot.y{background:#ffbd2e;}
+.term-dot.g{background:#27c93f;}
+.term-title{flex:1;text-align:center;font-size:.72rem;color:rgba(255,255,255,.5);font-weight:500;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:.4rem;}
+.term-title .live-dot{width:7px;height:7px;background:#27c93f;border-radius:50%;animation:pulseDot 1.8s infinite;}
+.term-body{padding:1.25rem 1.4rem;min-height:340px;position:relative;z-index:2;}
+.term-line{font-family:var(--mono);font-size:.85rem;line-height:1.7;color:#e2e8f0;display:flex;align-items:flex-start;gap:.6rem;min-height:1.5em;}
+.term-ln{color:#5b6478;font-size:.75rem;width:1.4rem;text-align:right;flex-shrink:0;user-select:none;padding-top:1px;}
+.term-content{flex:1;white-space:pre-wrap;word-break:break-word;}
+.tk-key{color:#ff79c6;}
+.tk-fn{color:#8be9fd;}
+.tk-str{color:#f1fa8c;}
+.tk-num{color:#bd93f9;}
+.tk-com{color:#6272a4;font-style:italic;}
+.tk-var{color:#50fa7b;}
+.tk-op{color:#ff79c6;}
+.cursor{display:inline-block;width:8px;height:1em;background:#50fa7b;animation:blink 1s steps(2) infinite;vertical-align:text-bottom;margin-left:2px;border-radius:1px;}
+@keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+.term-output{margin-top:1rem;padding:.85rem 1rem;background:rgba(80,250,123,.06);border-left:3px solid #50fa7b;border-radius:6px;font-family:var(--mono);font-size:.82rem;color:#a8e6c5;opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease);}
+.term-output.show{opacity:1;transform:translateY(0);}
+.term-output .out-label{color:#50fa7b;font-weight:700;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.35rem;}
+.term-tabs{display:flex;gap:.4rem;padding:.55rem 1rem 0;background:#1a2244;border-bottom:1px solid rgba(255,255,255,.06);}
+.term-tab{font-family:var(--mono);font-size:.72rem;color:rgba(255,255,255,.5);padding:.4rem .85rem;border-radius:6px 6px 0 0;background:transparent;border:none;cursor:pointer;transition:all .25s var(--ease);display:flex;align-items:center;gap:.4rem;}
+.term-tab .tdot{width:8px;height:8px;border-radius:50%;}
+.term-tab.py .tdot{background:#3776ab;}
+.term-tab.js .tdot{background:#f7df1e;}
+.term-tab.cpp .tdot{background:#00599c;}
+.term-tab.active{background:#0f1532;color:#fff;}
+.term-tab:hover{color:#fff;}
+.float-stat{position:absolute;background:#fff;border-radius:12px;padding:.7rem .85rem;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;color:var(--ink);z-index:5;border:1px solid var(--gray-100);}
+.float-stat-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.float-stat-ic svg{width:16px;height:16px;}
+.float-stat small{display:block;font-size:.66rem;color:var(--gray-500);font-weight:500;margin-top:1px;}
+.fs1{top:-18px;left:-18px;animation:floatY 5s ease-in-out infinite;}
+.fs1 .float-stat-ic{background:var(--green-soft);color:var(--green);}
+.fs2{bottom:-18px;right:-18px;animation:floatY 5.5s ease-in-out infinite -1s;}
+.fs2 .float-stat-ic{background:var(--accent-soft);color:var(--accent2);}
+
+
+/* USP STRIP */
+.usp-strip{padding:3rem 5%;background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100);}
+.usp-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
+.usp-item{display:flex;align-items:center;gap:.85rem;padding:.5rem;}
+.usp-num{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:1rem;flex-shrink:0;}
+.usp-item:nth-child(1) .usp-num{background:var(--primary-soft);color:var(--primary);}
+.usp-item:nth-child(2) .usp-num{background:var(--orange-soft);color:var(--orange);}
+.usp-item:nth-child(3) .usp-num{background:var(--accent-soft);color:var(--accent2);}
+.usp-item:nth-child(4) .usp-num{background:var(--green-soft);color:var(--green);}
+.usp-item:nth-child(5) .usp-num{background:#fbe7f5;color:var(--pink);}
+.usp-t{font-family:var(--display);font-weight:700;font-size:.92rem;color:var(--ink);line-height:1.2;}
+.usp-s{font-size:.76rem;color:var(--gray-500);margin-top:2px;}
+
+/* SECTIONS */
+section{padding:6rem 5%;position:relative;}
+.section-inner{max-width:1280px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.14em;margin-bottom:1rem;}
+.eyebrow::before{content:'';width:24px;height:2px;background:var(--primary);border-radius:2px;}
+.s-title{font-family:var(--display);font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-.025em;margin-bottom:1rem;max-width:760px;}
+.s-title em{font-style:normal;color:var(--primary);position:relative;}
+.s-title em::after{content:'';position:absolute;left:0;right:0;bottom:.08em;height:.32em;background:var(--accent);z-index:-1;border-radius:4px;}
+.s-sub{font-size:1.05rem;color:var(--gray-500);max-width:680px;line-height:1.65;margin-bottom:3.5rem;}
+
+/* PROBLEM */
+.problem-sec{background:#fff;}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.problem-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:1.75rem;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);position:relative;overflow:hidden;isolation:isolate;}
+.problem-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 50%,var(--primary) 110%);transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1;}
+.problem-card.swept::before,.problem-card:hover::before{transform:translateY(0);}
+.problem-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.problem-card.swept,.problem-card.swept:hover{border-color:transparent;}
+.problem-num{font-family:var(--display);font-weight:800;font-size:.78rem;color:var(--gray-400);letter-spacing:.08em;margin-bottom:1rem;transition:color .5s var(--ease);}
+.problem-card.swept .problem-num,.problem-card:hover .problem-num{color:var(--accent);}
+.problem-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:background .5s var(--ease),color .5s var(--ease);}
+.problem-icon svg{width:26px;height:26px;}
+.problem-card:nth-child(1) .problem-icon{background:var(--orange-soft);color:var(--orange);}
+.problem-card:nth-child(2) .problem-icon{background:var(--primary-soft);color:var(--primary);}
+.problem-card:nth-child(3) .problem-icon{background:var(--accent-soft);color:var(--accent2);}
+.problem-card:nth-child(4) .problem-icon{background:#fde2e2;color:var(--red);}
+.problem-card:nth-child(5) .problem-icon{background:var(--green-soft);color:var(--green);}
+.problem-card.swept .problem-icon,.problem-card:hover .problem-icon{background:rgba(255,200,61,.18)!important;color:var(--accent)!important;}
+.problem-card h3{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.55rem;line-height:1.3;letter-spacing:-.015em;transition:color .5s var(--ease);}
+.problem-card.swept h3,.problem-card:hover h3{color:#fff;}
+.problem-card p{font-size:.92rem;color:var(--gray-500);line-height:1.6;transition:color .5s var(--ease);}
+.problem-card.swept p,.problem-card:hover p{color:rgba(255,255,255,.78);}
+.problem-fix{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--gray-100);font-size:.82rem;color:var(--primary);font-weight:600;display:flex;align-items:center;gap:.4rem;transition:color .5s var(--ease),border-color .5s var(--ease);}
+.problem-fix svg{width:14px;height:14px;}
+.problem-card.swept .problem-fix,.problem-card:hover .problem-fix{color:var(--accent);border-color:rgba(255,255,255,.12);}
+
+/* SOLUTION */
+.solution-sec{background:var(--gray-50);}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+.feat-card{background:#fff;border-radius:var(--radius-lg);padding:1.9rem 1.6rem;border:1px solid var(--gray-100);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);position:relative;overflow:hidden;isolation:isolate;}
+.feat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ink) 0%,var(--primary) 100%);transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1;}
+.feat-card.swept::before,.feat-card:hover::before{transform:translateY(0);}
+.feat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.feat-card.swept,.feat-card.swept:hover{border-color:transparent;}
+.feat-card .feat-num{font-family:var(--mono);font-size:.72rem;color:var(--gray-400);font-weight:600;letter-spacing:.05em;margin-bottom:.85rem;transition:color .5s var(--ease);}
+.feat-card.swept .feat-num,.feat-card:hover .feat-num{color:var(--accent);}
+.feat-icon{width:54px;height:54px;border-radius:14px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;transition:background .5s var(--ease),transform .5s var(--ease);}
+.feat-icon svg{width:24px;height:24px;}
+.feat-card:nth-child(2) .feat-icon{background:var(--orange);}
+.feat-card:nth-child(3) .feat-icon{background:var(--green);}
+.feat-card:nth-child(4) .feat-icon{background:var(--ink);}
+.feat-card.swept .feat-icon,.feat-card:hover .feat-icon{background:var(--accent)!important;color:var(--ink);transform:rotate(-6deg) scale(1.05);}
+.feat-card h3{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.45rem;letter-spacing:-.015em;transition:color .5s var(--ease);}
+.feat-card.swept h3,.feat-card:hover h3{color:#fff;}
+.feat-card p{font-size:.92rem;color:var(--gray-500);line-height:1.55;transition:color .5s var(--ease);}
+.feat-card.swept p,.feat-card:hover p{color:rgba(255,255,255,.78);}
+
+/* ROADMAP */
+.roadmap-sec{background:#fff;}
+.roadmap-wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;position:relative;margin-top:1rem;padding-top:1rem;}
+.roadmap-road{position:absolute;top:18px;left:6%;right:6%;height:36px;z-index:0;pointer-events:none;}
+.roadmap-road svg{width:100%;height:100%;display:block;overflow:visible;}
+.road-base{stroke:var(--ink);stroke-width:18;fill:none;stroke-linecap:round;}
+.road-edge{stroke:rgba(255,255,255,.12);stroke-width:18;fill:none;stroke-linecap:round;}
+.road-dash{stroke:var(--accent);stroke-width:2;fill:none;stroke-linecap:round;stroke-dasharray:10 12;stroke-dashoffset:0;animation:roadFlow 1.4s linear infinite;}
+.road-progress{stroke:url(#roadGrad);stroke-width:4;fill:none;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1);}
+.roadmap-wrap.in-view .road-progress{stroke-dashoffset:0;}
+@keyframes roadFlow{0%{stroke-dashoffset:0;}100%{stroke-dashoffset:-22;}}
+.rm-step{position:relative;padding:0 .5rem;text-align:center;z-index:2;}
+.rm-num{width:64px;height:64px;background:#fff;border:3px solid var(--gray-200);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.3rem;font-weight:800;color:var(--ink);margin-bottom:1.25rem;transition:all .35s var(--ease);position:relative;box-shadow:0 4px 12px rgba(11,20,55,.08);}
+.rm-num::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px dashed rgba(58,78,224,.3);opacity:0;transition:all .35s var(--ease);}
+.rm-step:hover .rm-num{transform:scale(1.12);box-shadow:var(--shadow-yellow);}
+.rm-step:hover .rm-num::after{opacity:1;animation:spinSlow 8s linear infinite;}
+@keyframes spinSlow{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+.rm-step:nth-child(1) .rm-num{background:var(--primary);border-color:#fff;color:#fff;box-shadow:0 4px 16px rgba(58,78,224,.4);}
+.rm-step:nth-child(2) .rm-num{background:var(--orange);border-color:#fff;color:#fff;box-shadow:0 4px 16px rgba(255,107,53,.4);}
+.rm-step:nth-child(3) .rm-num{background:var(--accent);border-color:#fff;color:var(--ink);box-shadow:0 4px 16px rgba(255,176,0,.4);}
+.rm-step:nth-child(4) .rm-num{background:var(--green);border-color:#fff;color:#fff;box-shadow:0 4px 16px rgba(16,185,129,.4);}
+.rm-step:nth-child(5) .rm-num{background:var(--pink);border-color:#fff;color:#fff;box-shadow:0 4px 16px rgba(236,72,153,.4);}
+.rm-step:nth-child(6) .rm-num{background:var(--ink);border-color:#fff;color:#fff;box-shadow:0 4px 16px rgba(11,20,55,.4);}
+.rm-step h4{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;letter-spacing:-.01em;}
+.rm-step p{font-size:.82rem;color:var(--gray-500);line-height:1.5;}
+
+/* COURSES */
+.courses-sec{background:var(--gray-50);}
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.course-c{background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-100);transition:all .35s var(--ease);display:flex;flex-direction:column;}
+.course-c:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.cc-thumb{height:160px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.cc-thumb .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px;}
+.cc-thumb .dot-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:18px 18px;}
+.cc1{background:linear-gradient(135deg,#3a4ee0 0%,#1e2d6e 100%);}
+.cc2{background:linear-gradient(135deg,#ff6b35 0%,#c93d11 100%);}
+.cc3{background:linear-gradient(135deg,#ffc83d 0%,#b8860b 100%);}
+.cc4{background:linear-gradient(135deg,#10b981 0%,#047857 100%);}
+.cc5{background:linear-gradient(135deg,#ec4899 0%,#9d174d 100%);}
+.cc6{background:linear-gradient(135deg,#0b1437 0%,#3a4ee0 100%);}
+.cc-tech{position:relative;z-index:2;font-family:var(--mono);font-size:2.6rem;font-weight:700;color:#fff;letter-spacing:-.02em;}
+.cc-tag{position:absolute;top:.85rem;left:.85rem;background:#fff;color:var(--ink);font-size:.62rem;font-weight:800;padding:.3rem .55rem;border-radius:6px;letter-spacing:.06em;text-transform:uppercase;z-index:3;}
+.cc-status{position:absolute;bottom:.85rem;right:.85rem;background:rgba(255,255,255,.95);color:var(--ink);font-weight:700;font-size:.7rem;padding:.3rem .55rem;border-radius:6px;z-index:3;letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:.35rem;}
+.cc-status .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulseDot 2s infinite;}
+.cc-body{padding:1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1;position:relative;overflow:hidden;isolation:isolate;transition:background .35s var(--ease);}
+.cc-body::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 50%,var(--primary) 110%);transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1;}
+.course-c.swept .cc-body::before,.course-c:hover .cc-body::before{transform:translateY(0);}
+.cc-title{font-family:var(--display);font-size:1.25rem;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:.55rem;letter-spacing:-.015em;transition:color .5s var(--ease);}
+.course-c.swept .cc-title,.course-c:hover .cc-title{color:#fff;}
+.cc-desc{font-size:.9rem;color:var(--gray-500);line-height:1.55;margin-bottom:1.25rem;flex:1;transition:color .5s var(--ease);}
+.course-c.swept .cc-desc,.course-c:hover .cc-desc{color:rgba(255,255,255,.78);}
+.cc-cta{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--gray-100);transition:border-color .5s var(--ease);}
+.course-c.swept .cc-cta,.course-c:hover .cc-cta{border-top-color:rgba(255,255,255,.12);}
+.cc-notify{font-size:.82rem;font-weight:600;color:var(--ink);transition:color .5s var(--ease);}
+.course-c.swept .cc-notify,.course-c:hover .cc-notify{color:var(--accent);}
+.cc-arrow{width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease);cursor:pointer;text-decoration:none;}
+.course-c.swept .cc-arrow,.course-c:hover .cc-arrow{background:var(--accent);color:var(--ink);transform:translate(3px,-3px);}
+.cc-arrow svg{width:13px;height:13px;}
+
+/* TEAM */
+.team-sec{background:#fff;}
+.team-grid{display:grid;grid-template-columns:1.1fr 1.6fr;gap:2rem;align-items:stretch;}
+.founder-card{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 50%,var(--primary) 130%);border-radius:var(--radius-xl);padding:2.5rem;color:#fff;position:relative;overflow:hidden;}
+.founder-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,200,61,.18),transparent 60%);}
+.founder-card::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+.founder-pill{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.4rem;background:var(--accent);color:var(--ink);font-size:.7rem;font-weight:800;padding:.35rem .75rem;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem;}
+.founder-row{position:relative;z-index:2;display:flex;align-items:center;gap:1.25rem;margin-bottom:1.75rem;}
+.founder-av{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--orange));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.9rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;border:4px solid rgba(255,255,255,.15);flex-shrink:0;}
+.founder-name{font-family:var(--display);font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.15rem;}
+.founder-role{font-size:.92rem;color:var(--accent);font-weight:600;margin-bottom:.3rem;}
+.founder-loved{font-size:.78rem;color:rgba(255,255,255,.7);font-weight:500;}
+.founder-bio{position:relative;z-index:2;font-size:1rem;color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:1.75rem;}
+.founder-bio strong{color:#fff;font-weight:600;}
+.founder-social{position:relative;z-index:2;display:flex;gap:.55rem;}
+.soc-btn{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;font-size:.95rem;transition:all .3s var(--ease);}
+.soc-btn:hover{background:var(--accent);color:var(--ink);border-color:var(--accent);transform:translateY(-2px);}
+
+.team-members{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+.member-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:1.5rem;transition:all .35s var(--ease);display:flex;flex-direction:column;}
+.member-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--primary-soft);}
+.member-av{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:1rem;}
+.member-card:nth-child(1) .member-av{background:linear-gradient(135deg,var(--primary),var(--ink2));}
+.member-card:nth-child(2) .member-av{background:linear-gradient(135deg,var(--orange),#c93d11);}
+.member-card:nth-child(3) .member-av{background:linear-gradient(135deg,var(--accent2),#b8860b);color:var(--ink);}
+.member-card:nth-child(4) .member-av{background:linear-gradient(135deg,var(--green),#047857);}
+.member-name{font-family:var(--display);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.2rem;letter-spacing:-.01em;}
+.member-role{font-size:.85rem;color:var(--gray-500);font-weight:500;margin-bottom:.85rem;}
+.member-tag{display:inline-flex;align-self:flex-start;align-items:center;font-size:.7rem;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:.25rem .55rem;border-radius:6px;letter-spacing:.05em;text-transform:uppercase;margin-top:auto;}
+
+/* WAITLIST */
+.waitlist-sec{background:var(--gray-50);padding:6rem 5%;}
+.waitlist-card{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 50%,var(--primary) 130%);border-radius:var(--radius-xl);padding:4rem;position:relative;overflow:hidden;color:#fff;}
+.waitlist-card::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,200,61,.2),transparent 60%);}
+.waitlist-card::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+.waitlist-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;}
+.wl-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;margin-bottom:1rem;}
+.wl-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px;}
+.wl-title{font-family:var(--display);font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;line-height:1.15;color:#fff;margin-bottom:1.25rem;letter-spacing:-.025em;}
+.wl-title span{color:var(--accent);}
+.wl-sub{color:rgba(255,255,255,.78);font-size:1.02rem;line-height:1.65;margin-bottom:0;max-width:480px;}
+.wl-right{display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem;}
+.wl-btn{background:var(--accent);color:var(--ink)!important;padding:1.1rem 1.8rem;border-radius:12px;font-family:var(--sans);font-size:1rem;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:.55rem;transition:all .3s var(--ease);box-shadow:var(--shadow-yellow);}
+.wl-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+.wl-btn svg{width:14px;height:14px;transition:transform .3s var(--ease);}
+.wl-btn:hover svg{transform:translate(3px,-3px);}
+.wl-proof{display:flex;align-items:center;gap:1rem;}
+.wl-avs{display:flex;}
+.wl-avs span{width:36px;height:36px;border-radius:50%;border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;margin-left:-10px;}
+.wl-avs span:first-child{margin-left:0;}
+.wl-sp-text{font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.4;}
+.wl-sp-text strong{color:#fff;font-weight:700;display:block;}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:4rem 5% 2rem;}
+.footer-inner{max-width:1280px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand{display:flex;align-items:center;gap:.65rem;margin-bottom:1.25rem;}
+.footer-brand .nav-v{background:linear-gradient(135deg,var(--accent),var(--orange));color:var(--ink);}
+.footer-brand .nav-v::after{background:var(--primary);border-color:var(--ink);}
+.footer-brand .nav-name span:first-child{color:#fff;}
+.footer-tag{font-size:.92rem;color:rgba(255,255,255,.6);line-height:1.6;max-width:340px;margin-bottom:1.5rem;}
+.footer-social{display:flex;gap:.5rem;}
+.f-soc{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);transition:all .3s var(--ease);text-decoration:none;font-weight:700;}
+.f-soc:hover{background:var(--accent);color:var(--ink);border-color:var(--accent);transform:translateY(-2px);}
+.footer-col h5{font-family:var(--display);font-size:.95rem;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-.01em;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem;}
+.footer-col a{font-size:.88rem;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s var(--ease);}
+.footer-col a:hover{color:var(--accent);}
+.footer-newsletter p{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:1rem;}
+.foot-email-row{display:flex;gap:.5rem;}
+.foot-email-row input{flex:1;padding:.75rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#fff;font-family:var(--sans);font-size:.88rem;}
+.foot-email-row input::placeholder{color:rgba(255,255,255,.4);}
+.foot-email-row input:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.1);}
+.foot-send{background:var(--accent);color:var(--ink);border:none;padding:.75rem 1rem;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all .3s var(--ease);}
+.foot-send:hover{background:var(--accent2);transform:translateY(-2px);}
+.foot-send svg{width:16px;height:16px;}
+.foot-nospam{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.75rem;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.4);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal.d1{transition-delay:.05s;}.reveal.d2{transition-delay:.12s;}.reveal.d3{transition-delay:.19s;}.reveal.d4{transition-delay:.26s;}.reveal.d5{transition-delay:.33s;}.reveal.d6{transition-delay:.4s;}
+
+/* TEAM SLIDE-UP (pronounced, sequential) */
+.founder-card.slide-up,
+.member-card.slide-up{opacity:0;transform:translateY(60px);transition:opacity .9s var(--ease),transform .9s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
+.founder-card.slide-up.in,
+.member-card.slide-up.in{opacity:1;transform:translateY(0);}
+.founder-card.slide-up{transition-delay:0s;}
+.member-card.slide-up:nth-child(1){transition-delay:.15s;}
+.member-card.slide-up:nth-child(2){transition-delay:.3s;}
+.member-card.slide-up:nth-child(3){transition-delay:.45s;}
+.member-card.slide-up:nth-child(4){transition-delay:.6s;}
+@media (prefers-reduced-motion: reduce){
+  .founder-card.slide-up,.member-card.slide-up{opacity:1;transform:none;transition:none;}
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px){
+  .nav-links > a:not(.nav-cta){display:none;}
+  .hamburger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .usp-inner{grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+  .problem-grid,.feat-grid,.courses-grid{grid-template-columns:repeat(2,1fr);}
+  .roadmap-wrap{grid-template-columns:repeat(3,1fr);gap:2rem 1rem;}
+  .roadmap-wrap::before{display:none;}
+  .team-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .waitlist-inner{grid-template-columns:1fr;gap:2rem;}
+  .waitlist-card{padding:2.5rem;}
+}
+@media (max-width: 640px){
+  .top-strip{font-size:.7rem;padding:.45rem 4%;}
+  nav{padding:0 4%;height:64px;}
+  .mobile-menu{inset:64px 0 0 0;}
+  .hero{padding:2.5rem 5% 4rem;}
+  .hero h1{font-size:2rem;}
+  section{padding:4rem 5%;}
+  .usp-inner{grid-template-columns:1fr;}
+  .problem-grid,.feat-grid,.courses-grid{grid-template-columns:1fr;}
+  .roadmap-wrap{grid-template-columns:repeat(2,1fr);}
+  .team-members{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;gap:2rem;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .waitlist-card{padding:2rem 1.5rem;}
+  .founder-card{padding:2rem 1.5rem;}
+  .btn{padding:.85rem 1.3rem;font-size:.9rem;width:100%;justify-content:center;}
+  .hero-actions{flex-direction:column;align-items:stretch;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip">
+  <span class="pulse-dot"></span>
+  <span><strong>Launching Soon</strong> · Join the waitlist for early access &amp; exclusive launch benefits</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-v">V</span>
+    <span class="nav-name">
+      <span>Velocity Learning</span>
+      <span>Coding Education</span>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="#courses">Courses</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#mentorship">Mentorship</a>
+    <a href="#team">About</a>
+    <a href="#waitlist">FAQs</a>
+  </div>
+  <div class="nav-actions">
+    <a href="#waitlist" class="nav-cta">
+      Join Waitlist
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#courses">Courses</a>
+  <a href="#roadmap">Roadmap</a>
+  <a href="#mentorship">Mentorship</a>
+  <a href="#team">About</a>
+  <a href="#waitlist">FAQs</a>
+  <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge reveal d1">
+        <span class="dot-green"></span>
+        Launching Soon · Limited Early Access
+      </div>
+      <h1 class="reveal d2">The Future of<br><span class="hl">Coding Education</span><br>is Arriving.</h1>
+      <p class="hero-sub reveal d3">
+        Learn coding the right way — with <strong>structured roadmaps</strong>, live mentorship, real projects, and a curriculum built for the careers people actually want.
+      </p>
+      <div class="hero-actions reveal d4">
+        <a href="#waitlist" class="btn btn-accent">
+          Join Waitlist
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="#roadmap" class="btn btn-outline">
+          Explore Roadmap
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-meta reveal d5">
+        <div class="avatars">
+          <span style="background:linear-gradient(135deg,#7d6fa0,#a08fc4);">A</span>
+          <span style="background:linear-gradient(135deg,#c47a6a,#e0998a);">B</span>
+          <span style="background:linear-gradient(135deg,#c49a45,#dcb260);">C</span>
+          <span style="background:linear-gradient(135deg,#4a8c6a,#6ba888);">D</span>
+        </div>
+        <div class="waitlist-text"><strong>2,500+</strong> learners already on the waitlist</div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d3">
+      <div class="skill-orbit">
+        <div class="skill-pill sk-1"><div class="skill-pill-emoji">Py</div><div class="skill-pill-name">Python</div><div class="skill-pill-tag">Language</div></div>
+        <div class="skill-pill sk-2"><div class="skill-pill-emoji">Jv</div><div class="skill-pill-name">Java</div><div class="skill-pill-tag">Industry</div></div>
+        <div class="skill-pill sk-3"><div class="skill-pill-emoji">C++</div><div class="skill-pill-name">C++</div><div class="skill-pill-tag">Core</div></div>
+        <div class="skill-pill sk-4"><div class="skill-pill-emoji">⚛</div><div class="skill-pill-name">React</div><div class="skill-pill-tag">Frontend</div></div>
+        <div class="skill-pill sk-5"><div class="skill-pill-emoji">∑</div><div class="skill-pill-name">DSA</div><div class="skill-pill-tag">Logic</div></div>
+        <div class="skill-pill sk-6"><div class="skill-pill-emoji">AI</div><div class="skill-pill-name">AI / ML</div><div class="skill-pill-tag">Future</div></div>
+        <div class="skill-pill sk-7"><div class="skill-pill-emoji">&lt;/&gt;</div><div class="skill-pill-name">Web Dev</div><div class="skill-pill-tag">Full Stack</div></div>
+        <div class="skill-pill sk-8"><div class="skill-pill-emoji">$_</div><div class="skill-pill-name">Git</div><div class="skill-pill-tag">Tools</div></div>
+        <div class="skill-pill sk-9"><div class="skill-pill-emoji">SQL</div><div class="skill-pill-name">SQL</div><div class="skill-pill-tag">Data</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USP STRIP -->
+<section class="usp-strip">
+  <div class="usp-inner">
+    <div class="usp-item">
+      <div class="usp-num">01</div>
+      <div><div class="usp-t">Beginner Friendly</div><div class="usp-s">Start from zero</div></div>
+    </div>
+    <div class="usp-item">
+      <div class="usp-num">02</div>
+      <div><div class="usp-t">Live Mentorship</div><div class="usp-s">Learn with experts</div></div>
+    </div>
+    <div class="usp-item">
+      <div class="usp-num">03</div>
+      <div><div class="usp-t">Real Projects</div><div class="usp-s">Build a portfolio</div></div>
+    </div>
+    <div class="usp-item">
+      <div class="usp-num">04</div>
+      <div><div class="usp-t">Career Focused</div><div class="usp-s">Job-ready skills</div></div>
+    </div>
+    <div class="usp-item">
+      <div class="usp-num">05</div>
+      <div><div class="usp-t">Hindi + English</div><div class="usp-s">Your language</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-sec">
+  <div class="section-inner">
+    <div class="eyebrow reveal d1">The Problem</div>
+    <h2 class="s-title reveal d2">Why most learners <em>get stuck</em></h2>
+    <p class="s-sub reveal d3">Endless tutorials. Zero direction. Sound familiar?</p>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal d1">
+        <div class="problem-num">01</div>
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <h3>Too much random free content</h3>
+        <p>Endless YouTube playlists, scattered tutorials, half-finished blog posts. Tabs pile up. Progress doesn&apos;t.</p>
+        <div class="problem-fix">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          One curated path. Zero noise.
+        </div>
+      </div>
+      <div class="problem-card reveal d2">
+        <div class="problem-num">02</div>
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.553 2.776A1 1 0 0022 18.882V8.118a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        </div>
+        <h3>No roadmap</h3>
+        <p>You don&apos;t know what to learn next — or why it matters for your career.</p>
+        <div class="problem-fix">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          A 6-stage roadmap, role-specific.
+        </div>
+      </div>
+      <div class="problem-card reveal d3">
+        <div class="problem-num">03</div>
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>No discipline</h3>
+        <p>You start motivated. Then quit halfway. Again, and again.</p>
+        <div class="problem-fix">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Cohorts, streaks &amp; accountability.
+        </div>
+      </div>
+      <div class="problem-card reveal d4">
+        <div class="problem-num">04</div>
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 4M12 17h.01"/></svg>
+        </div>
+        <h3>No guidance</h3>
+        <p>Stuck on a bug for 6 hours. Nobody to ping. Stack Overflow is silent.</p>
+        <div class="problem-fix">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          1:1 mentors, on demand.
+        </div>
+      </div>
+      <div class="problem-card reveal d5">
+        <div class="problem-num">05</div>
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 14h3"/></svg>
+        </div>
+        <h3>No project direction</h3>
+        <p>You learn the syntax, but can&apos;t build anything that recruiters care about.</p>
+        <div class="problem-fix">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Portfolio projects, end to end.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution-sec" id="mentorship">
+  <div class="section-inner">
+    <div class="eyebrow reveal d1">The Solution</div>
+    <h2 class="s-title reveal d2">A learning system that <em>actually works</em></h2>
+    <p class="s-sub reveal d3">Structured. Guided. Practical. Career-focused. Everything you need to go from beginner to job-ready.</p>
+
+    <div class="feat-grid">
+      <div class="feat-card reveal d1">
+        <div class="feat-num">01 / 04</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v12H3z"/><path d="M9 21V12h6v9"/></svg>
+        </div>
+        <h3>Structured</h3>
+        <p>A clear path through every concept — no guesswork about what comes next.</p>
+      </div>
+      <div class="feat-card reveal d2">
+        <div class="feat-num">02 / 04</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 8v8"/></svg>
+        </div>
+        <h3>Guided</h3>
+        <p>1:1 mentorship and expert support at every stage of your journey.</p>
+      </div>
+      <div class="feat-card reveal d3">
+        <div class="feat-num">03 / 04</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </div>
+        <h3>Practical</h3>
+        <p>Real projects that go in your portfolio — not just theory on a whiteboard.</p>
+      </div>
+      <div class="feat-card reveal d4">
+        <div class="feat-num">04 / 04</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>Career-focused</h3>
+        <p>Every lesson connects back to what actually gets you hired.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap-sec" id="roadmap">
+  <div class="section-inner">
+    <div class="eyebrow reveal d1">Your Journey</div>
+    <h2 class="s-title reveal d2">From beginner to <em>job ready</em></h2>
+    <p class="s-sub reveal d3">Six precise stages. One clear destination.</p>
+
+    <div class="roadmap-wrap" id="roadmapWrap">
+      <div class="roadmap-road" aria-hidden="true">
+        <svg viewBox="0 0 1000 36" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#3a4ee0"/>
+              <stop offset="20%" stop-color="#ff6b35"/>
+              <stop offset="40%" stop-color="#ffc83d"/>
+              <stop offset="60%" stop-color="#10b981"/>
+              <stop offset="80%" stop-color="#ec4899"/>
+              <stop offset="100%" stop-color="#0b1437"/>
+            </linearGradient>
+          </defs>
+          <path class="road-base" d="M 10 18 Q 200 -6 400 18 T 800 18 T 990 18"/>
+          <path class="road-dash" d="M 10 18 Q 200 -6 400 18 T 800 18 T 990 18"/>
+          <path class="road-progress" d="M 10 18 Q 200 -6 400 18 T 800 18 T 990 18"/>
+        </svg>
+      </div>
+      <div class="rm-step reveal d1">
+        <div class="rm-num">01</div>
+        <h4>Beginner</h4>
+        <p>Start from zero. We make it simple.</p>
+      </div>
+      <div class="rm-step reveal d2">
+        <div class="rm-num">02</div>
+        <h4>Logic Building</h4>
+        <p>Build strong programming logic.</p>
+      </div>
+      <div class="rm-step reveal d3">
+        <div class="rm-num">03</div>
+        <h4>Coding Skills</h4>
+        <p>Learn concepts the right way.</p>
+      </div>
+      <div class="rm-step reveal d4">
+        <div class="rm-num">04</div>
+        <h4>Projects</h4>
+        <p>Build real-world projects.</p>
+      </div>
+      <div class="rm-step reveal d5">
+        <div class="rm-num">05</div>
+        <h4>Confidence</h4>
+        <p>Problem-solving becomes natural.</p>
+      </div>
+      <div class="rm-step reveal d6">
+        <div class="rm-num">06</div>
+        <h4>Job Ready</h4>
+        <p>Get hired. Launch your career.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-sec" id="courses">
+  <div class="section-inner">
+    <div class="eyebrow reveal d1">Our Courses</div>
+    <h2 class="s-title reveal d2">Courses <em>launching soon</em></h2>
+    <p class="s-sub reveal d3">Hand-crafted curriculum. Industry-grade quality. Built for results.</p>
+
+    <div class="courses-grid">
+      <div class="course-c reveal d1">
+        <div class="cc-thumb cc1">
+          <div class="grid-bg"></div>
+          <span class="cc-tag">Foundation</span>
+          <div class="cc-tech">C</div>
+          <span class="cc-status"><span class="dot"></span>Soon</span>
+        </div>
+        <div class="cc-body">
+          <h3 class="cc-title">C Programming</h3>
+          <p class="cc-desc">The bedrock. Memory, pointers, and how computers really work.</p>
+          <div class="cc-cta">
+            <span class="cc-notify">Notify me on launch</span>
+            <a href="#waitlist" class="cc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-c reveal d2">
+        <div class="cc-thumb cc2">
+          <div class="dot-bg"></div>
+          <span class="cc-tag">Intermediate</span>
+          <div class="cc-tech">C++</div>
+          <span class="cc-status"><span class="dot"></span>Soon</span>
+        </div>
+        <div class="cc-body">
+          <h3 class="cc-title">C++</h3>
+          <p class="cc-desc">OOP, STL, and competitive-grade problem solving.</p>
+          <div class="cc-cta">
+            <span class="cc-notify">Notify me on launch</span>
+            <a href="#waitlist" class="cc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-c reveal d3">
+        <div class="cc-thumb cc3">
+          <div class="grid-bg"></div>
+          <span class="cc-tag">Industry</span>
+          <div class="cc-tech" style="color:var(--ink);">Jv</div>
+          <span class="cc-status"><span class="dot"></span>Soon</span>
+        </div>
+        <div class="cc-body">
+          <h3 class="cc-title">Java</h3>
+          <p class="cc-desc">Enterprise-grade. The language behind the world&apos;s biggest systems.</p>
+          <div class="cc-cta">
+            <span class="cc-notify">Notify me on launch</span>
+            <a href="#waitlist" class="cc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-c reveal d4">
+        <div class="cc-thumb cc4">
+          <div class="dot-bg"></div>
+          <span class="cc-tag">Versatile</span>
+          <div class="cc-tech">Py</div>
+          <span class="cc-status"><span class="dot"></span>Soon</span>
+        </div>
+        <div class="cc-body">
+          <h3 class="cc-title">Python</h3>
+          <p class="cc-desc">From scripts to ML. The most loved language of the decade.</p>
+          <div class="cc-cta">
+            <span class="cc-notify">Notify me on launch</span>
+            <a href="#waitlist" class="cc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-c reveal d5">
+        <div class="cc-thumb cc5">
+          <div class="grid-bg"></div>
+          <span class="cc-tag">Full-Stack</span>
+          <div class="cc-tech">&lt;/&gt;</div>
+          <span class="cc-status"><span class="dot"></span>Soon</span>
+        </div>
+        <div class="cc-body">
+          <h3 class="cc-title">Web Dev</h3>
+          <p class="cc-desc">HTML, CSS, React, Node — ship your first product.</p>
+          <div class="cc-cta">
+            <span class="cc-notify">Notify me on launch</span>
+            <a href="#waitlist" class="cc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-c reveal d6">
+        <div class="cc-thumb cc6">
+          <div class="dot-bg"></div>
+          <span class="cc-tag">Job-Ready</span>
+          <div class="cc-tech">IP</div>
+          <span class="cc-status"><span class="dot"></span>Soon</span>
+        </div>
+        <div class="cc-body">
+          <h3 class="cc-title">Interview Prep</h3>
+          <p class="cc-desc">DSA, system design, behavioral rounds — all in one place.</p>
+          <div class="cc-cta">
+            <span class="cc-notify">Notify me on launch</span>
+            <a href="#waitlist" class="cc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-sec" id="team">
+  <div class="section-inner">
+    <div class="eyebrow reveal d1">Our Team</div>
+    <h2 class="s-title reveal d2">Built by <em>educators, developers &amp; dreamers</em></h2>
+    <p class="s-sub reveal d3">A small, passionate team committed to making coding education better for everyone.</p>
+
+    <div class="team-grid">
+      <div class="founder-card slide-up">
+        <div class="founder-pill">★ Founder</div>
+        <div class="founder-row">
+          <div class="founder-av">AS</div>
+          <div>
+            <div class="founder-name">Ankit Singh</div>
+            <div class="founder-role">Founder &amp; CEO</div>
+            <div class="founder-loved">★★★★★ Loved by 2.5K+ learners</div>
+          </div>
+        </div>
+        <p class="founder-bio">Ex-Software Engineer turned Educator. Passionate about making coding education <strong>structured, practical, and accessible</strong> for everyone — no matter where they start from.</p>
+        <div class="founder-social">
+          <a href="#" class="soc-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="soc-btn" aria-label="X">𝕏</a>
+          <a href="#" class="soc-btn" aria-label="Website">↗</a>
+        </div>
+      </div>
+
+      <div class="team-members">
+        <div class="member-card slide-up">
+          <div class="member-av">SS</div>
+          <div class="member-name">Shubham S.</div>
+          <div class="member-role">DSA Expert</div>
+          <span class="member-tag">Mentor</span>
+        </div>
+        <div class="member-card slide-up">
+          <div class="member-av">PK</div>
+          <div class="member-name">Priya K.</div>
+          <div class="member-role">Full Stack Dev</div>
+          <span class="member-tag">Mentor</span>
+        </div>
+        <div class="member-card slide-up">
+          <div class="member-av">AM</div>
+          <div class="member-name">Arjun M.</div>
+          <div class="member-role">System Design</div>
+          <span class="member-tag">Mentor</span>
+        </div>
+        <div class="member-card slide-up">
+          <div class="member-av">NR</div>
+          <div class="member-name">Neha R.</div>
+          <div class="member-role">Career Mentor</div>
+          <span class="member-tag">Mentor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="waitlist-sec" id="waitlist">
+  <div class="waitlist-card">
+    <div class="waitlist-inner">
+      <div>
+        <div class="wl-eyebrow">Limited Spots — Early Access</div>
+        <h2 class="wl-title">Be among the first learners at <span>Velocity Learning</span></h2>
+        <p class="wl-sub">Join the waitlist and be the first to access our courses, mentorship, and exclusive launch benefits.</p>
+      </div>
+      <div class="wl-right">
+        <a href="#" class="wl-btn">
+          Join Waitlist Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <div class="wl-proof">
+          <div class="wl-avs">
+            <span style="background:#7d6fa0;">A</span>
+            <span style="background:#c47a6a;">B</span>
+            <span style="background:#c49a45;">C</span>
+            <span style="background:#4a8c6a;">D</span>
+            <span style="background:#6a7aac;">+</span>
+          </div>
+          <div class="wl-sp-text"><strong>2,500+ learners</strong>already on the waitlist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <span class="nav-v">V</span>
+          <div class="nav-name">
+            <span>Velocity Learning</span>
+            <span>Coding Education</span>
+          </div>
+        </div>
+        <p class="footer-tag">The future of coding education. Structured, guided, practical, and built for careers.</p>
+        <div class="footer-social">
+          <a href="#" class="f-soc" aria-label="X">𝕏</a>
+          <a href="#" class="f-soc" aria-label="LinkedIn">in</a>
+          <a href="#" class="f-soc" aria-label="YouTube">▶</a>
+          <a href="#" class="f-soc" aria-label="Instagram">◻</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#mentorship">Mentorship</a></li>
+          <li><a href="#team">About Us</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Stay Updated</h5>
+        <p>Launch updates, straight to your inbox.</p>
+        <div class="foot-email-row">
+          <input type="email" placeholder="you@example.com">
+          <button class="foot-send" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+        <div class="foot-nospam">✓ No spam. Unsubscribe anytime.</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Velocity Learning. All rights reserved.</div>
+      <div>v1.0 — crafted with care</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+document.querySelectorAll('.mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal, .slide-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
